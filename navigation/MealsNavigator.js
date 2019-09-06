@@ -22,9 +22,9 @@ const MealsNavigator = createStackNavigator(
     defaultNavigationOptions: {
       headerTitle: "Meals App",
       headerStyle: {
-        backgroundColor: Platform.OS === "android" ? Color.accent1 : "white"
+        backgroundColor: Platform.OS === "android" ? Color.text : "white"
       },
-      headerTintColor: Platform.OS === "android" ? "white" : Color.accent1
+      headerTintColor: Platform.OS === "android" ? "white" : Color.text
     }
   }
 );
