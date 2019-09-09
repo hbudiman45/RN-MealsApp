@@ -17,8 +17,12 @@ const CategoriesScreen = props => {
       <CategoryGrid
         itemData={itemData}
         onSelect={() => {
-          props.navigation.navigate("CategoryMeals", {
-            categoryTitle: itemData.item.title
+          props.navigation.navigate({
+            routeName: "CategoryMeals",
+            params: {
+              categoryId: itemData.item.id,
+              categoryTitle: itemData.item.title
+            }
           });
         }}
       />

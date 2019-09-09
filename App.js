@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, SafeAreaView } from "react-native";
 import { useScreens } from "react-native-screens";
 
 import * as Font from "expo-font";
@@ -19,10 +19,12 @@ export default function App() {
   const [fontLoaded, setFontLoaded] = useState(false);
   if (!fontLoaded) {
     return (
-      <AppLoading
-        startAsync={fetchFonts}
-        onFinish={() => setFontLoaded(true)}
-      />
+      <SafeAreaView>
+        <AppLoading
+          startAsync={fetchFonts}
+          onFinish={() => setFontLoaded(true)}
+        />
+      </SafeAreaView>
     );
   }
   return <MealsNavigator />;
