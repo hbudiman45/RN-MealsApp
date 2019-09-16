@@ -17,7 +17,19 @@ const CategoryMealsScreen = props => {
   );
 
   const renderMealItem = itemData => {
-    return <MealItem item={itemData.item} />;
+    return (
+      <MealItem
+        item={itemData.item}
+        onSelectMeal={() => {
+          props.navigation.navigate({
+            routeName: "MealDetail",
+            params: {
+              mealId: itemData.item.id
+            }
+          });
+        }}
+      />
+    );
   };
 
   return (
